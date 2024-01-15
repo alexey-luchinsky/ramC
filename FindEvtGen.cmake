@@ -12,42 +12,35 @@
 MESSAGE(STATUS "Looking for EvtGen ...")
 
 FIND_PATH(EVTGEN_INCLUDE_DIR NAMES EvtGen/EvtGen.hh PATHS
-  /Users/luchinsky/Work/EvtGen/evtgen/
   ${SIMPATH}/include/EvtGen
   /Users/luchinsky/Work/EvtGen/R01-06-00/
   /Users/luchinsky/Work/dist/EvtGen/R01-06-00/
   /Users/luchinsky/Work/EvtGen/evtgen/
-/afs/cern.ch/user/a/aluchins/EvtGen/EvtGen/R01-06-00/
+  /afs/cern.ch/user/a/aluchins/EvtGen/EvtGen/R01-06-00/
+  /Users/alekseiluchinsky/miniconda3/include
   NO_DEFAULT_PATH
 )
 
-If (NOT EVTGEN_INCLUDE_DIR)
-  Message(STATUS "Could not find EvtGen include files")
-EndIf()
-
 
 FIND_PATH(EVTGEN_LIBRARY_DIR NAMES libEvtGen.a PATHS
-  /Users/luchinsky/Work/EvtGen/evtgen/build/lib/
   ${SIMPATH}/lib
   /Users/luchinsky/Work/EvtGen/R01-06-00/lib/
   /Users/luchinsky/Work/dist/EvtGen/R01-06-00/lib/
   /afs/cern.ch/user/a/aluchins/EvtGen/EvtGen/R01-06-00/lib/
   /Users/luchinsky/Work/EvtGen/evtgen/build/lib
+  /afs/cern.ch/user/a/aluchins/EvtGen/EvtGen/R01-06-00/lib/archive/
+  /Users/alekseiluchinsky/miniconda3/lib
   NO_DEFAULT_PATH
 )
-
-If (NOT EVTGEN_LIBRARY_DIR)
-  Message(STATUS "Could not find EvtGen library files")
-EndIf()
 
 
 
 Find_Path(EVTGENDATA NAMES evt.pdl PATHS
-  /Users/luchinsky/Work/EvtGen/evtgen
   ${SIMPATH}/share/EvtGen/
   /Users/luchinsky/Work/EvtGen/R01-06-00/
   /Users/luchinsky/Work/dist/EvtGen/R01-06-00/
  /afs/cern.ch/user/a/aluchins/EvtGen/EvtGen/R01-06-00/
+ /Users/alekseiluchinsky/miniconda3/share/EvtGen/
 )
 
 If (NOT EVTGENDATA)

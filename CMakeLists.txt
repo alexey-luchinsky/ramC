@@ -3,7 +3,7 @@ MESSAGE("Hello, world")
 IF(DEFINED APPLE)
     MESSAGE("APPLE")
 ENDIF(DEFINED APPLE)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
 set(CMAKE_OSX_DEPLOYMENT_TARGET "")
 INCLUDE(SetCompileFlag.cmake)
@@ -39,7 +39,7 @@ include_directories(src/)
 
 # ramC library
 add_library(ramC STATIC "src/ramC.c++" "src/rambo_.for")
-target_link_libraries(ramC ${ROOT_LIBRARIES} ${EVTGEN_LIBRARY_DIR}/libEvtGen.a ${HEPMC_LIBRARY_DIR}/libHepMC3.dylib) 
+target_link_libraries(ramC ${ROOT_LIBRARIES} ${EVTGEN_LIBRARY_DIR}/libEvtGen.a ${HEPMC_LIBRARY_DIR}/libHepMC3-static.a)
 
 
 #adding sources for test.exe
